@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky",
+    "fix":"yarn type-check && yarn clean && yarn format"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "^2.0.6"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "with-tailwind",
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "lint-staged": {
+    "app/**/*.{js,jsx,ts,tsx}": ["eslint --fix"],
+    "package/ui/**/*.{js,jsx,ts,tsx}": ["eslint --fix"],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
+}
