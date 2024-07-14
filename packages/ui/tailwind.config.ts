@@ -3,7 +3,7 @@ import sharedConfig from "@repo/tailwind-config";
 
 const config: Pick<Config, "prefix" | "presets" | "content"> = {
   content: ["./src/**/*.tsx", "./src/*.{ts,tsx,js,jsx}"],
-  prefix: "ui-",
+  // prefix: "ui-",
   presets: [sharedConfig],
 };
 
