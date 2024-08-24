@@ -3,6 +3,8 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:web":"yarn dev --filter=web",
+    "build:web":"yarn build --filter=web",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
