@@ -3,6 +3,8 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "install:portfolio":"yarn --cwd apps/portfolio",
+    "build:portfolio": "yarn dev --filter=portfolio",
     "dev:web": "yarn dev --filter=web",
     "build:web": "yarn build --filter=web",
     "lint": "turbo lint",
