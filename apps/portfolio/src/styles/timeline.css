@@ -1,0 +1,6 @@
+.rs-timeline-item-custom-dot {
+  @apply absolute bg-orange-400 size-8 flex justify-center items-center rounded-full text-white -translate-x-[0.8rem];
+}
+.rs-timeline-item-tail {
+  @apply !h-full;
+}
