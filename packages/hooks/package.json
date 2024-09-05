@@ -1,0 +1,22 @@
+{
+  "name": "@repo/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  },
+  "exports": {
+    "useClickOutside": "./useClickOutside.tsx",
+    "useQueryString": "./useQueryString.ts",
+    "useDebounceSearch": "./useDebounceSearch.tsx"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
