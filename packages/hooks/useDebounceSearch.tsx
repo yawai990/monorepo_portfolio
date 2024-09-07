@@ -10,11 +10,10 @@ export const useDebounceSearch = (queryName: string) => {
 
   const debounceRequest = useCallback(
     (searchTerm: string) => debounceSearch(searchTerm),
-    [debounceSearch]
+    [debounceSearch],
   );
   const onChangeSearchText = (e: ChangeEvent<HTMLInputElement>) => {
     debounceRequest(e.target.value);
   };
   return { onChangeSearchText };
 };
-

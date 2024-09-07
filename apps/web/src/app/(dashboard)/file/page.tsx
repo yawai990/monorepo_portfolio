@@ -29,7 +29,7 @@ const FileUpload = () => {
       try {
         // ? REQUEST UPLOAD LINK
         const url = await axios.post(
-          `http://localhost:3000/api/presigned?filetype=${file.type}&filename=${file.name}`
+          `http://localhost:3000/api/presigned?filetype=${file.type}&filename=${file.name}`,
         );
 
         if (url.status === 200) {
@@ -37,8 +37,8 @@ const FileUpload = () => {
             setImgViewLink(
               decodeURIComponent(url.data.url).replace(
                 /\?X-Amz-Algorithm.*$/,
-                ""
-              )
+                "",
+              ),
             );
             toast.success("file uploaded successfully");
           });

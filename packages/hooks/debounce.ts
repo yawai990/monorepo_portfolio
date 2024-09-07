@@ -1,6 +1,6 @@
 const debounce = <T extends (...args: any[]) => any>(
   mainFunction: T,
-  delay: number
+  delay: number,
 ): T => {
   let timer: ReturnType<typeof setTimeout> | undefined;
 

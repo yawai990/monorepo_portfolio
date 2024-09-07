@@ -13,7 +13,7 @@ export const useQueryString = () => {
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   const updateQueryString = (key: string, value: string) => {
