@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       {
         // ~ THE UNUSED PRESIGNED LINK WILL BE EXPIRED AFTER 1 HOUR
         expiresIn: 3600,
-      }
+      },
     );
     return NextResponse.json({
       url: signedUrl,

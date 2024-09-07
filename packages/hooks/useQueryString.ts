@@ -1,5 +1,5 @@
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React from 'react';
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React from "react";
 
 export const useQueryString = () => {
   const router = useRouter();
@@ -17,10 +17,18 @@ export const useQueryString = () => {
   );
 
   const updateQueryString = (key: string, value: string) => {
-    router.push(pathname + '?' + createQueryString(key, value));
+    router.push(pathname + "?" + createQueryString(key, value));
   };
 
-  return { curpage: searchParams.get('page'), searchParams, updateQueryString, pathname };
+  const removeQuery = () => router.replace(pathname);
+
+  return {
+    curpage: searchParams.get("page"),
+    searchParams,
+    updateQueryString,
+    pathname,
+    removeQuery,
+  };
 };
 
 export const useGetQuery = (key: string) => {

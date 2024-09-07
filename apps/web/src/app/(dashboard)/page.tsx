@@ -4,7 +4,7 @@ import { Card } from "@repo/ui/card";
 import { Button } from "@repo/ui/button";
 import { NextPage } from "next";
 
-const Home:NextPage = () => {
+const Home: NextPage = () => {
   return (
     <div>
       <h1 className="text-blue-500">Hello web</h1>

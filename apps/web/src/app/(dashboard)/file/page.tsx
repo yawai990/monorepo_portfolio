@@ -4,16 +4,21 @@ import { Button } from "@repo/ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import imageCompression from "browser-image-compression";
+import { useDebounceSearch } from "@repo/hooks";
 
 const FileUpload = () => {
+  // if (true) {
+  //   throw notFound();
+  // }
   const [file, setFile] = React.useState<File | null>(null);
   const [imgViewlink, setImgViewLink] = React.useState("");
+  const { onChangeSearchText } = useDebounceSearch("search");
 
   const handleChangeFile = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target!;
     if (file && file.files) {
       const compressImg = await imageCompression(file.files[0], {
-        maxSizeMB: 1
+        maxSizeMB: 1,
       });
       setFile(compressImg);
     }
@@ -58,6 +63,13 @@ const FileUpload = () => {
       >
         View Image
       </a>
+
+      <hr />
+      <input
+        type="text"
+        onChange={onChangeSearchText}
+        className="border-red-500 font-semibold"
+      />
     </div>
   );
 };
